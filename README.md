@@ -92,9 +92,11 @@ $(document).foundation();
 |minScrollbarLength|`null`|When set to an integer value, the thumb part of the scrollbar will not shrink below that number of pixels.|
 |maxScrollbarLength|`null`|When set to an integer value, the thumb part of the scrollbar will not expand over that number of pixels.|
 |useBothWheelAxes|`false`|When set to true, and only one (vertical or horizontal) scrollbar is visible then both vertical and horizontal scrolling will affect the scrollbar.|
-|suppressScrollX|f`alse`|When set to true, the scroll bar in X axis will not be available, regardless of the content width.|
+|suppressScrollX|`false`|When set to true, the scroll bar in X axis will not be available, regardless of the content width.|
 |suppressScrollY|`salse`|When set to true, the scroll bar in Y axis will not be available, regardless of the content height.|
 |scrollXMarginOffset|`0`|The number of pixels the content height can surpass the container height without enabling the Y axis scroll bar. Allows some "wiggle room" or "offset break", so that Y axis scroll bar is not enabled just because of a few pixels.|
+|initialXPosition|`'left'`|Automaticaly scroll the content to an initial position, this can the number of px to scroll to or the strings `'left'` or `'right'`.|
+|initialYPosition|`'top'`|Automaticaly scroll the content to an initial position, this can the number of px to scroll to or the strings `'top'` or `'bottom'`.|
 |stopPropagationOnClick|`true`|When set to false, when clicking on a rail, the click event will be allowed to propagate.|
 |theme|`'default'`|A string. It's a class name added to the container element. The class name is prepended with `ps-theme-`. So default theme class name is `ps-theme-default`. In order to create custom themes with scss use `ps-container($theme)` mixin, where `$theme` is a scss map.
 
