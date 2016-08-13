@@ -1,0 +1,26 @@
+{
+  "name": "foundation-perfect-scrollbar",
+  "homepage": "https://github.com/samuelmc/foundation-perfect-scrollbar",
+  "authors": [
+    "samuelmc <samuel.moncarey1991@gmail.com>"
+  ],
+  "description": "Perfect Scrollbar as a Foundation plugin",
+  "main": "dist/js/foundation.perfectScrollbar.js",
+  "keywords": [
+    "foundation",
+    "scrollbar",
+    "scroll"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "package.json",
+    "gulpfile.js",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "foundation-sites": "^6.2.3",
+    "perfect-scrollbar": "^0.6.12"
+  }
+}
