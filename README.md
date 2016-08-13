@@ -103,6 +103,6 @@ $(document).foundation();
 ## Licence
 [![MIT Licence](https://img.shields.io/badge/Licence-MIT-blue.svg)](https://opensource.org/licenses/mit-license.php)
 
-&copy; Samuel Moncarey
+&copy; Samuel Moncarey 2016
 
 [![Donate via paypal](https://img.shields.io/badge/Paypal-donate-blue.svg)](https://www.paypal.me/samuelmc/5 "Consider donation")
