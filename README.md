@@ -37,7 +37,7 @@ gulp.task('sass', function() {
 ```
 Include the perfect-scrollbar main.scss file
 ```scss
-@include "main";
+@import "main";
 ```
 Then add these settings to your _settings.scss file for customization
 ```scss
