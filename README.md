@@ -10,7 +10,7 @@
 ```shell
 bower install foundation-perfect-scrollbar
 ```
-Add all nessesary files to your html. This plugin only works with foundation and requires momnetjs, mustache.js and either font-awesome or foundation-icons.
+Add all nessesary files to your html. This plugin only works with foundation and requires perfect-scrollbar.
 ```html
 <link rel="stylesheet" type="text/css" href="bower_components/foundation-sites/dist/foundation.min.css">
 <link rel="stylesheet" type="text/css" href="bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css">
