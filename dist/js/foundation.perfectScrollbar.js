@@ -1,6 +1,4 @@
-/**
- * Created by samuel on 13/08/16.
- */
+/** Created by Samuel Moncarey on 13/08/16. */
 
 !function($) {
 
@@ -86,7 +84,7 @@
         initialXPosition: 'left',
         initialYPosition: 'top',
         stopPropagationOnClick: true,
-        theme: 'default'
+        theme: 'foundation'
     };
 
     // Window exports
