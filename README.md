@@ -1,5 +1,5 @@
 # foundation-perfect-scrollbar
-**[Perfect Scrollbar](https://github.com/noraesae/perfect-scrollbar) as a Foundation plugin**
+**[Perfect Scrollbar](https://github.com/noraesae/perfect-scrollbar) plugin for Foundation 6**
 
 ## Installation
 
@@ -13,7 +13,7 @@ bower install foundation-perfect-scrollbar
 Add all nessesary files to your html. This plugin only works with foundation and requires perfect-scrollbar.
 ```html
 <link rel="stylesheet" type="text/css" href="bower_components/foundation-sites/dist/foundation.min.css">
-<link rel="stylesheet" type="text/css" href="bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" type="text/css" href="bower_components/foundation-perfect-scrollbar/dist/css/foundation-perfect-scrollbar.min.css">
 ...
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"></script>
@@ -28,7 +28,7 @@ var $    = require('gulp-load-plugins')();
 
 var sassPaths = [
   'bower_components/foundation-sites/scss',
-  'bower_components/perfect-scrollbar/src/css'
+  'bower_components/foundation-perfect-scrollbar/src/scss/plugin'
 ];
 
 gulp.task('sass', function() {
@@ -37,7 +37,7 @@ gulp.task('sass', function() {
 ```
 Include the perfect-scrollbar main.scss file
 ```scss
-@import "main";
+@import "foundation-perfect-scrollbar";
 ```
 Then add these settings to your _settings.scss file for customization
 ```scss
@@ -98,7 +98,7 @@ $(document).foundation();
 |initialXPosition|`'left'`|Automaticaly scroll the content to an initial position, this can the number of px to scroll to or the strings `'left'` or `'right'`.|
 |initialYPosition|`'top'`|Automaticaly scroll the content to an initial position, this can the number of px to scroll to or the strings `'top'` or `'bottom'`.|
 |stopPropagationOnClick|`true`|When set to false, when clicking on a rail, the click event will be allowed to propagate.|
-|theme|`'default'`|A string. It's a class name added to the container element. The class name is prepended with `ps-theme-`. So default theme class name is `ps-theme-default`. In order to create custom themes with scss use `ps-container($theme)` mixin, where `$theme` is a scss map.
+|theme|`'foundation'`|A string. It's a class name added to the container element. The class name is prepended with `ps-theme-`. So default theme class name is `ps-theme-foundation`. In order to create custom themes with scss use the `ps-container($theme)` mixin, where `$theme` is an scss map.
 
 ## Licence
 [![MIT Licence](https://img.shields.io/badge/Licence-MIT-blue.svg)](https://opensource.org/licenses/mit-license.php)
