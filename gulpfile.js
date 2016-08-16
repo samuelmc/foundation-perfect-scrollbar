@@ -5,14 +5,10 @@ var uglify      = require('uglify-js-harmony');
 var minifyJs    = require('gulp-uglify/minifier');
 var rename      = require('gulp-rename');
 
-var sassPaths   = [
-  'bower_components/foundation-sites/scss',
-  'bower_components/motion-ui/src',
-  'src/scss/plugin'
-];
+var sassPaths   = [];
 
 gulp.task('sass', function() {
-  return gulp.src('src/scss/foundation-datepicker.scss')
+  return gulp.src('src/scss/**/*scss')
     .pipe(plugins.sass({
       includePaths: sassPaths
     })
@@ -28,7 +24,7 @@ gulp.task('sass', function() {
 });
 
 gulp.task('minify-css', function () {
-  return gulp.src('dist/css/foundation-datepicker.css')
+  return gulp.src(['dist/css/**/*.css', '!dist/css/**/*.min.css'])
       .pipe(minifyCss({ext: '.min.css'}))
       .pipe(gulp.dest('dist/css'));
 });
@@ -46,6 +42,8 @@ gulp.task('copy-js', function () {
 });
 
 
-gulp.task('default', ['copy-js','minify-js'], function() {
+gulp.task('default', ['copy-js','minify-js', 'sass', 'minify-css'], function() {
   gulp.watch(['src/js/**/*.js'], ['copy-js','minify-js']);
+  gulp.watch(['src/scss/**/*.scss'], ['sass']);
+  gulp.watch(['dist/css/**/*.css', '!dist/css/**/*.min.css'], ['minify-css']);
 });
