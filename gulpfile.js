@@ -8,7 +8,7 @@ var rename      = require('gulp-rename');
 var sassPaths   = [];
 
 gulp.task('sass', function() {
-  return gulp.src('src/scss/**/*scss')
+  return gulp.src('src/scss/**/*.scss')
     .pipe(plugins.sass({
       includePaths: sassPaths
     })
