@@ -12,12 +12,12 @@
          * Creates a new instance of a PerfectScrollbar.
          * @class
          * @fires PerfectScrollbar#init
-         * @param {jQuery} container - jQuery object to attach a perfect-scrollbar to.
+         * @param {jQuery} element - jQuery object to attach a perfect-scrollbar to.
          * @param {Object} options - object to extend the default configuration.
          */
-        constructor(container, options) {
-            this.$container = container;
-            this.options = $.extend({}, PerfectScrollbar.defaults, this.$container.data(), options);
+        constructor(element, options) {
+            this.$element = element;
+            this.options = $.extend({}, PerfectScrollbar.defaults, this.$element.data(), options);
 
             this._init();
 
@@ -29,23 +29,23 @@
          * @private
          */
         _init() {
-            this.$container.perfectScrollbar(this.options);
+            this.$element.perfectScrollbar(this.options);
 
             if (this.options.initialYPosition !== 'top') {
                 if (!isNaN(this.options.initialYPosition)) {
-                    this.$container.scrollTop(this.options.initialYPosition);
+                    this.$element.scrollTop(this.options.initialYPosition);
                 }
                 if (this.options.initialYPosition == 'bottom') {
-                    this.$container.scrollTop(this.$container[0].scrollHeight);
+                    this.$element.scrollTop(this.$element[0].scrollHeight);
                 }
             }
 
             if (this.options.initialXPosition !== 'left') {
                 if (!isNaN(this.options.initialXPosition)) {
-                    this.$container.scrollLeft(this.options.initialXPosition);
+                    this.$element.scrollLeft(this.options.initialXPosition);
                 }
                 if (this.options.initialXPosition == 'right') {
-                    this.$container.scrollLeft(this.$container[0].scrollWidth);
+                    this.$element.scrollLeft(this.$element[0].scrollWidth);
                 }
             }
 
@@ -65,7 +65,7 @@
          * @function
          */
         destroy() {
-            this.$container.perfectScrollbar('destroy');
+            this.$element.perfectScrollbar('destroy');
             Foundation.unregisterPlugin(this);
         }
     }
