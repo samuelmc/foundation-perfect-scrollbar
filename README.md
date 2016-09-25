@@ -1,6 +1,8 @@
 # foundation-perfect-scrollbar
 **[Perfect Scrollbar](https://github.com/noraesae/perfect-scrollbar) plugin for Foundation 6**
 
+[![Travis](https://img.shields.io/travis/samuelmc/foundation-perfect-scrollbar.svg)](https://travis-ci.org/samuelmc/foundation-perfect-scrollbar)
+
 ## Installation
 
 **With bower:**
