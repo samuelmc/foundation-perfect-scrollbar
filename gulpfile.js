@@ -10,20 +10,20 @@ var sassPaths = [
   'bower_components/foundation-sites/scss'
 ];
 
-gulp.task('sass', function() {
+gulp.task('sass', function () {
   return gulp.src('src/scss/**/*.scss')
-    .pipe(plugins.sass({
-      includePaths: sassPaths
-    })
-      .on('error', plugins.sass.logError))
-    .pipe(plugins.autoprefixer({
-      browsers: [
-        'last 2 versions',
-        'ie >= 9',
-        'Android >= 2.3'
-      ]
-    }))
-    .pipe(gulp.dest('dist/css'));
+      .pipe(plugins.sass({
+        includePaths: sassPaths
+      })
+          .on('error', plugins.sass.logError))
+      .pipe(plugins.autoprefixer({
+        browsers: [
+          'last 2 versions',
+          'ie >= 9',
+          'Android >= 2.3'
+        ]
+      }))
+      .pipe(gulp.dest('dist/css'));
 });
 
 gulp.task('minify-css', function () {
