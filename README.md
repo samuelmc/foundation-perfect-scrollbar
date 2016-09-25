@@ -35,7 +35,7 @@ gulp.task('sass', function() {
     ...
 
 ```
-Include the perfect-scrollbar main.scss file
+Include the foundation-perfect-scrollbar.scss file
 ```scss
 @import "foundation-perfect-scrollbar";
 ```
@@ -104,5 +104,3 @@ $(document).foundation();
 [![MIT Licence](https://img.shields.io/badge/Licence-MIT-blue.svg)](https://opensource.org/licenses/mit-license.php)
 
 &copy; Samuel Moncarey 2016
-
-[![Donate via paypal](https://img.shields.io/badge/Paypal-donate-blue.svg)](https://www.paypal.me/samuelmc/5 "Consider donation")
