@@ -42,7 +42,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             key: '_init',
             value: function _init() {
                 this.$element.perfectScrollbar(this.options);
+                this._events();
+            }
 
+            /**
+             * adds event listeners for the perfect-scrollbar and its anchor
+             * @private
+             */
+
+        }, {
+            key: '_events',
+            value: function _events() {
+                $(window).on('load', this.load.bind(this));
+            }
+        }, {
+            key: 'load',
+            value: function load() {
                 if (this.options.initialYPosition !== 'top') {
                     if (!isNaN(this.options.initialYPosition)) {
                         this.$element.scrollTop(this.options.initialYPosition);
@@ -60,18 +75,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                         this.$element.scrollLeft(this.$element[0].scrollWidth);
                     }
                 }
-
-                this._events();
             }
-
-            /**
-             * adds event listeners for the perfect-scrollbar and its anchor
-             * @private
-             */
-
-        }, {
-            key: '_events',
-            value: function _events() {}
 
             /**
              * Destroys an instance of perfect-scrollbar, removes template element from the view.
