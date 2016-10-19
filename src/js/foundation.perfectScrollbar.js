@@ -66,6 +66,7 @@
                 const containerDims = Foundation.Box.GetDimensions(this.$element),
                     elementDims = Foundation.Box.GetDimensions($element);
                 console.log(containerDims, elementDims);
+
             }
         }
 
