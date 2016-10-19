@@ -67,17 +67,19 @@
                     elementDims = Foundation.Box.GetDimensions($element),
                     top = elementDims.offset.top - containerDims.offset.top,
                     height = elementDims.height;
-                console.log(this.$element.scrollTop(), top);
+                console.log(this.$element.scrollTop(), top, 'initial');
 
                 if (this.$element.scrollTop() + elementDims.height > top + height) {
-                    this.$element.scrollTop(top + height - elementDims.height)
+                    console.log(this.$element.scrollTop(), elementDims.height > top + height, 'down');
+                    this.$element.scrollTop(top + height - elementDims.height);
                 }
 
                 if (this.$element.scrollTop() < top) {
+                    console.log(this.$element.scrollTop(), top, 'up');
                     this.$element.scrollTop(top);
                 }
 
-                console.log(this.$element.scrollTop());
+                console.log(this.$element.scrollTop(), top, 'result');
             }
         }
 
