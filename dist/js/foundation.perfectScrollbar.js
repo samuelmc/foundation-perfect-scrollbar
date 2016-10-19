@@ -87,7 +87,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     console.log(this.$element.scrollTop(), top, 'initial');
 
                     if (this.$element.scrollTop() + elementDims.height < top + height) {
-                        console.log(this.$element.scrollTop(), top + height, 'down');
+                        console.log(this.$element.scrollTop() + elementDims.height, top + height, 'down');
                         this.$element.scrollTop(top + height - elementDims.height);
                     }
 
