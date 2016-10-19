@@ -81,8 +81,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             value: function view_element($element) {
                 if ($.contains(this.$element[0], $element[0])) {
                     var containerDims = Foundation.Box.GetDimensions(this.$element),
-                        elementDims = Foundation.Box.GetDimensions($element);
-                    console.log(containerDims, elementDims);
+                        elementDims = Foundation.Box.GetDimensions($element),
+                        top = elementDims.offset.top - containerDims.offset.top,
+                        height = elementDims.height;
+
+                    if (this.$element.scrollTop() + elementDims.height < top + height) {
+                        this.$element.scrollTop(top + height - elementDims.height);
+                    }
+
+                    if (this.$element.scrollTop() < top) {
+                        this.$element.scrollTop(top);
+                    }
                 }
             }
 
