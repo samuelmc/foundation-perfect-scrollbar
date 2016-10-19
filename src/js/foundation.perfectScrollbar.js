@@ -62,7 +62,7 @@
         }
 
         view_element($element) {
-            if ($.contains(this.$element, $element)) {
+            if ($.contains(this.$element[0], $element[0])) {
                 const containerDims = Foundation.Box.GetDimensions(this.$element),
                     elementDims = Foundation.Box.GetDimensions($element);
                 console.log(containerDims, elementDims);

@@ -79,7 +79,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }, {
             key: 'view_element',
             value: function view_element($element) {
-                if ($.contains(this.$element, $element)) {
+                if ($.contains(this.$element[0], $element[0])) {
                     var containerDims = Foundation.Box.GetDimensions(this.$element),
                         elementDims = Foundation.Box.GetDimensions($element);
                     console.log(containerDims, elementDims);
