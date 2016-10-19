@@ -84,9 +84,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                         elementDims = Foundation.Box.GetDimensions($element),
                         top = elementDims.offset.top - containerDims.offset.top,
                         height = elementDims.height;
-                    console.log(this.$element.scrollTop());
+                    console.log(this.$element.scrollTop(), top);
 
-                    if (this.$element.scrollTop() + elementDims.height < top + height) {
+                    if (this.$element.scrollTop() + elementDims.height > top + height) {
                         this.$element.scrollTop(top + height - elementDims.height);
                     }
 
