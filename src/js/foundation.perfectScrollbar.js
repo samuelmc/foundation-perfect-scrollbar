@@ -60,6 +60,14 @@
 
         }
 
+        view_element($element) {
+            if ($.contains(this.$element, $element)) {
+                const containerDims = Foundation.Box.GetDimensions(this.$element),
+                    elementDims = Foundation.Box.GetDimensions($element);
+                console.log(containerDims, elementDims);
+            }
+        }
+
         /**
          * Destroys an instance of perfect-scrollbar, removes template element from the view.
          * @function

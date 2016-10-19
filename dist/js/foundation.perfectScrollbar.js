@@ -72,6 +72,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }, {
             key: '_events',
             value: function _events() {}
+        }, {
+            key: 'view_element',
+            value: function view_element($element) {
+                if ($.contains(this.$element, $element)) {
+                    var containerDims = Foundation.Box.GetDimensions(this.$element),
+                        elementDims = Foundation.Box.GetDimensions($element);
+                    console.log(containerDims, elementDims);
+                }
+            }
 
             /**
              * Destroys an instance of perfect-scrollbar, removes template element from the view.
