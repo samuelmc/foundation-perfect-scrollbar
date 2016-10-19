@@ -30,7 +30,18 @@
          */
         _init() {
             this.$element.perfectScrollbar(this.options);
+            this._events();
+        }
 
+        /**
+         * adds event listeners for the perfect-scrollbar and its anchor
+         * @private
+         */
+        _events() {
+            $(window).on('load', this.load.bind(this));
+        }
+
+        load() {
             if (this.options.initialYPosition !== 'top') {
                 if (!isNaN(this.options.initialYPosition)) {
                     this.$element.scrollTop(this.options.initialYPosition);
@@ -48,16 +59,6 @@
                     this.$element.scrollLeft(this.$element[0].scrollWidth);
                 }
             }
-
-            this._events();
-        }
-
-        /**
-         * adds event listeners for the perfect-scrollbar and its anchor
-         * @private
-         */
-        _events() {
-
         }
 
         view_element($element) {
