@@ -76,29 +76,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     }
                 }
             }
-        }, {
-            key: 'view_element',
-            value: function view_element($element) {
-                if ($.contains(this.$element[0], $element[0])) {
-                    var containerDims = Foundation.Box.GetDimensions(this.$element),
-                        elementDims = Foundation.Box.GetDimensions($element),
-                        top = elementDims.offset.top - containerDims.offset.top,
-                        height = elementDims.height;
-                    console.log(this.$element.scrollTop(), top, 'initial');
-
-                    if (this.$element.scrollTop() + elementDims.height < top + height) {
-                        console.log(this.$element.scrollTop() + elementDims.height, top + height, 'down');
-                        this.$element.scrollTop(top + height - elementDims.height);
-                    }
-
-                    if (this.$element.scrollTop() > top) {
-                        console.log(this.$element.scrollTop(), top, 'up');
-                        this.$element.scrollTop(top);
-                    }
-
-                    console.log(this.$element.scrollTop(), top, 'result');
-                }
-            }
 
             /**
              * Destroys an instance of perfect-scrollbar, removes template element from the view.
