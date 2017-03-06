@@ -84,11 +84,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             value: function scrollToElement($element) {
                 var _this = this;
                 if ($.contains(this.$element[0], $element[0])) {
-                    this.$element.animate({
-                        scrollTop: $element.offset().top - _this.$element.offset().top + _this.$element.scrollTop()
-                    }, {
-                        duration: _this.options.animateScrollTo ? _this.options.animationSpeed : 0
-                    });
+                    $element.scrollIntoView();
                 } else console.warn('Element not in container.');
             }
 
@@ -120,9 +116,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     initialYPosition: 'top',
                     initialXPosition: 'left',
                     stopPropagationOnClick: true,
-                    theme: 'foundation',
-                    animateScrollTo: true,
-                    animationSpeed: 400
+                    theme: 'foundation'
                 };
             }
         }]);

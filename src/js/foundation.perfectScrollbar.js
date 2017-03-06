@@ -67,11 +67,7 @@
         scrollToElement($element) {
             const _this = this;
             if ($.contains(this.$element[0], $element[0])) {
-                this.$element.animate({
-                    scrollTop: $element.offset().top - _this.$element.offset().top + _this.$element.scrollTop()
-                }, {
-                    duration: _this.options.animateScrollTo ? _this.options.animationSpeed : 0
-                });
+                $element.scrollIntoView();
             }
             else console.warn('Element not in container.')
         }
@@ -100,9 +96,7 @@
                 initialYPosition: 'top',
                 initialXPosition: 'left',
                 stopPropagationOnClick: true,
-                theme: 'foundation',
-                animateScrollTo: true,
-                animationSpeed: 400
+                theme: 'foundation'
             };
         }
     }
