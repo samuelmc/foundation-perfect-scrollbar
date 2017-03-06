@@ -3,7 +3,7 @@
  * Licensed under MIT Open Source
  */
 
-!function($) {
+!function ($) {
 
     /**
      * PerfectScrollbar module.
@@ -64,6 +64,18 @@
             }
         }
 
+        scrollToElement($element) {
+            const _this = this;
+            if ($.contains(this.$element[0], $element[0])) {
+                this.$element.animate({
+                    scrollTop: $element.offset().top - _this.$element.offset().top + _this.$element.scrollTop()
+                }, {
+                    duration: _this.options.animateScrollTo ? _this.options.animationSpeed : 0
+                });
+            }
+            else console.warn('Element not in container.')
+        }
+
         /**
          * Destroys an instance of perfect-scrollbar, removes template element from the view.
          * @function
@@ -88,7 +100,9 @@
                 initialYPosition: 'top',
                 initialXPosition: 'left',
                 stopPropagationOnClick: true,
-                theme: 'foundation'
+                theme: 'foundation',
+                animateScrollTo: true,
+                animationSpeed: 400
             };
         }
     }

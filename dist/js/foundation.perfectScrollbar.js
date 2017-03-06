@@ -79,6 +79,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     }
                 }
             }
+        }, {
+            key: 'scrollToElement',
+            value: function scrollToElement($element) {
+                var _this = this;
+                if ($.contains(this.$element[0], $element[0])) {
+                    this.$element.animate({
+                        scrollTop: $element.offset().top - _this.$element.offset().top + _this.$element.scrollTop()
+                    }, {
+                        duration: _this.options.animateScrollTo ? _this.options.animationSpeed : 0
+                    });
+                } else console.warn('Element not in container.');
+            }
 
             /**
              * Destroys an instance of perfect-scrollbar, removes template element from the view.
@@ -108,7 +120,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     initialYPosition: 'top',
                     initialXPosition: 'left',
                     stopPropagationOnClick: true,
-                    theme: 'foundation'
+                    theme: 'foundation',
+                    animateScrollTo: true,
+                    animationSpeed: 400
                 };
             }
         }]);
