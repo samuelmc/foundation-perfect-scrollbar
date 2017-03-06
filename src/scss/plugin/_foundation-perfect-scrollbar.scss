@@ -68,6 +68,8 @@ $ps-scrollbar-y-hover-width: 11px !default;
 
 // Layout and theme mixin
 @mixin ps-container($theme) {
+  position: absolute;
+  height: 100%;
   -ms-touch-action: none;
   touch-action: none;
   overflow: hidden !important;

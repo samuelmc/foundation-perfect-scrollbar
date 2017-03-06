@@ -1,4 +1,6 @@
 .ps-theme-foundation {
+  position: absolute;
+  height: 100%;
   -ms-touch-action: none;
   touch-action: none;
   overflow: hidden !important;

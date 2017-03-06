@@ -79,6 +79,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     }
                 }
             }
+        }, {
+            key: 'scrollToElement',
+            value: function scrollToElement($element) {
+                var _this = this;
+                if ($.contains(this.$element[0], $element[0])) {
+                    $element.scrollIntoView();
+                } else console.warn('Element not in container.');
+            }
 
             /**
              * Destroys an instance of perfect-scrollbar, removes template element from the view.

@@ -3,7 +3,7 @@
  * Licensed under MIT Open Source
  */
 
-!function($) {
+!function ($) {
 
     /**
      * PerfectScrollbar module.
@@ -62,6 +62,14 @@
                     this.$element.scrollLeft(this.$element[0].scrollWidth);
                 }
             }
+        }
+
+        scrollToElement($element) {
+            const _this = this;
+            if ($.contains(this.$element[0], $element[0])) {
+                $element.scrollIntoView();
+            }
+            else console.warn('Element not in container.')
         }
 
         /**
