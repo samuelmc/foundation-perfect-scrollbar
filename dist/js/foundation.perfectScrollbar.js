@@ -4,7 +4,10 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-/** Created by Samuel Moncarey on 13/08/16. */
+/**
+ * Foundation perfect scrollbar integration by Samuel Moncarey.
+ * Licensed under MIT Open Source
+ */
 
 !function ($) {
 
@@ -88,28 +91,33 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 this.$element.perfectScrollbar('destroy');
                 Foundation.unregisterPlugin(this);
             }
+        }], [{
+            key: 'defaults',
+            get: function get() {
+                return {
+                    handlers: ['click-rail', 'drag-scrollbar', 'keyboard', 'wheel', 'touch'],
+                    wheelSpeed: 1,
+                    wheelPropagation: false,
+                    swipePropagation: true,
+                    minScrollbarLength: null,
+                    useBothWheelAxes: false,
+                    suppressScrollX: false,
+                    suppressScrollY: false,
+                    scrollXMarginOffset: 0,
+                    scrollYMarginOffset: 0,
+                    initialYPosition: 'top',
+                    initialXPosition: 'left',
+                    stopPropagationOnClick: true,
+                    theme: 'foundation'
+                };
+            }
         }]);
 
         return PerfectScrollbar;
     }();
 
-    PerfectScrollbar.defaults = {
-        handlers: ['click-rail', 'drag-scrollbar', 'keyboard', 'wheel', 'touch'],
-        wheelSpeed: 1,
-        wheelPropagation: false,
-        swipePropagation: true,
-        minScrollbarLength: null,
-        useBothWheelAxes: false,
-        suppressScrollX: false,
-        suppressScrollY: false,
-        scrollXMarginOffset: 0,
-        scrollYMarginOffset: 0,
-        initialXPosition: 'left',
-        initialYPosition: 'top',
-        stopPropagationOnClick: true,
-        theme: 'foundation'
-    };
-
     // Window exports
+
+
     Foundation.plugin(PerfectScrollbar, 'PerfectScrollbar');
 }(jQuery);
