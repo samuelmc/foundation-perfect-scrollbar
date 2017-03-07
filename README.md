@@ -14,13 +14,13 @@ bower install foundation-perfect-scrollbar
 ```
 Add all nessesary files to your html. This plugin only works with foundation and requires perfect-scrollbar.
 ```html
-<link rel="stylesheet" type="text/css" href="bower_components/foundation-sites/dist/foundation.min.css">
+<link rel="stylesheet" type="text/css" href="bower_components/foundation-sites/dist/css/foundation.min.css">
 <link rel="stylesheet" type="text/css" href="bower_components/foundation-perfect-scrollbar/dist/css/foundation-perfect-scrollbar.min.css">
 ...
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script src="bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"></script>
-<script src="bower_components/foundation-sites/dist/foundation.min.js"></script>
-<script src="bower_components/foundation-perfect-scrollbar/dist/js/foundation.perfectScrollbar.min.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/what-input/dist/what-input.js"></script><script src="bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="bower_components/foundation-sites/dist/js/foundation.min.js"></script>
+    <script src="bower_components/foundation-perfect-scrollbar/dist/js/foundation.perfectScrollbar.min.js"></script>
 ```
 
 If you are using foundation's scss with gulp, the best way add the styles is by adding it to the sass paths in your gulpfile.
@@ -29,8 +29,10 @@ var gulp = require('gulp');
 var $    = require('gulp-load-plugins')();
 
 var sassPaths = [
-  'bower_components/foundation-sites/scss',
-  'bower_components/foundation-perfect-scrollbar/src/scss/plugin'
+    'bower_components/normalize.scss/sass',
+    'bower_components/foundation-sites/scss',
+    'bower_components/foundation-perfect-scrollbar/src/scss/plugin',
+    'bower_components/motion-ui/src'
 ];
 
 gulp.task('sass', function() {
