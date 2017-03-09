@@ -67,9 +67,30 @@
         scrollToElement($element) {
             const _this = this;
             if ($.contains(this.$element[0], $element[0])) {
-                $element[0].scrollIntoView();
+                let containerDims = Foundation.Box.GetDimensions(this.$element);
+                let targetDims = Foundation.Box.GetDimensions($element);
+
+                if (targetDims.offset.top < containerDims.offset.top) {
+                    let scrollTop = targetDims.offset.top - containerDims.offset.top + this.$element.scrollTop();
+                    this._scrollAnimation(scrollTop);
+                }
+
+                if ((targetDims.offset.top + targetDims.height) > (containerDims.offset.top + containerDims.height)) {
+                    let scrollTop = targetDims.offset.top - (containerDims.height - targetDims.height) - containerDims.offset.top + this.$element.scrollTop();
+                    this._scrollAnimation(scrollTop);
+                }
+
             }
             else console.warn('Element not in container.')
+        }
+
+        _scrollAnimation(scrollTop) {
+            const _this = this;
+            this.$element.finish().animate({
+                scrollTop: scrollTop
+            }, {
+                duration: _this.options.animateScrollTo ? _this.options.animationSpeed : 0
+            });
         }
 
         /**
@@ -96,7 +117,9 @@
                 initialYPosition: 'top',
                 initialXPosition: 'left',
                 stopPropagationOnClick: true,
-                theme: 'foundation'
+                theme: 'foundation',
+                animateScrollTo: false,
+                animationSpeed: 200
             };
         }
     }
