@@ -84,7 +84,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             value: function scrollToElement($element) {
                 var _this = this;
                 if ($.contains(this.$element[0], $element[0])) {
-                    $element.scrollIntoView();
+                    $element[0].scrollIntoView();
                 } else console.warn('Element not in container.');
             }
 
