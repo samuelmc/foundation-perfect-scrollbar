@@ -97,7 +97,7 @@ $(document).foundation();
 |maxScrollbarLength|`null`|When set to an integer value, the thumb part of the scrollbar will not expand over that number of pixels.|
 |useBothWheelAxes|`false`|When set to true, and only one (vertical or horizontal) scrollbar is visible then both vertical and horizontal scrolling will affect the scrollbar.|
 |suppressScrollX|`false`|When set to true, the scroll bar in X axis will not be available, regardless of the content width.|
-|suppressScrollY|`salse`|When set to true, the scroll bar in Y axis will not be available, regardless of the content height.|
+|suppressScrollY|`false`|When set to true, the scroll bar in Y axis will not be available, regardless of the content height.|
 |scrollXMarginOffset|`0`|The number of pixels the content height can surpass the container height without enabling the Y axis scroll bar. Allows some "wiggle room" or "offset break", so that Y axis scroll bar is not enabled just because of a few pixels.|
 |initialXPosition|`'left'`|Automaticaly scroll the content to an initial position, this can the number of px to scroll to or the strings `'left'` or `'right'`.|
 |initialYPosition|`'top'`|Automaticaly scroll the content to an initial position, this can the number of px to scroll to or the strings `'top'` or `'bottom'`.|
